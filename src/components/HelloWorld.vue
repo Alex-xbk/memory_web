@@ -3,6 +3,7 @@
   <h1>{{ msg }}</h1>
   <h2>Essential Links</h2>
   <h3>{{name}}</h3>
+  <md-icon>home</md-icon>
   <input type="text" v-model="name" />
   <ul>
     <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>

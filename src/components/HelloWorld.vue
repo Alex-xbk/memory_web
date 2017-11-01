@@ -1,25 +1,21 @@
 <template>
-<div class="hello">
-  <h1>{{ msg }}</h1>
-  <h2>Essential Links</h2>
-  <h3>{{name}}</h3>
-  <md-icon>home</md-icon>
-  <input type="text" v-model="name" />
-  <ul>
-    <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-    <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-    <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-    <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    <br>
-    <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-  </ul>
-  <h2>Ecosystem</h2>
-  <ul>
-    <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-    <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-    <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-  </ul>
+<div>
+  <md-toolbar>
+    <md-button class="md-icon-button" @click="toggleLeftSidenav">
+      <md-icon>menu</md-icon>
+    </md-button>
+  </md-toolbar>
+
+  <md-sidenav class="md-left" ref="leftSidenav" @open="open('Left')" @close="close('Left')">
+    <md-toolbar class="md-large">
+      <!-- <div class="md-toolbar-container">
+      <h3 class="md-title">Sidenav content</h3>
+    </div> -->
+      <md-avatar class="md-large">
+      <img src="../../static/image/2.png" />
+      </md-avatar>
+    </md-toolbar>
+  </md-sidenav>
 </div>
 </template>
 
@@ -28,8 +24,24 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App =。=',
-      name: 'alex',
+
+    }
+  },
+  methods: {
+    toggleLeftSidenav() {
+      this.$refs.leftSidenav.toggle();
+    },
+    toggleRightSidenav() {
+      this.$refs.rightSidenav.toggle();
+    },
+    closeRightSidenav() {
+      this.$refs.rightSidenav.close();
+    },
+    open(ref) {
+      console.log('Opened: ' + ref);
+    },
+    close(ref) {
+      console.log('Closed: ' + ref);
     }
   }
 }
@@ -37,23 +49,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-  background-color: hsl(311, 64%, 52%);
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

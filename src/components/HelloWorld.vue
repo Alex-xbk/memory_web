@@ -12,7 +12,7 @@
       <h3 class="md-title">Sidenav content</h3>
     </div> -->
       <md-avatar class="md-large">
-      <img src="../../static/image/2.png" />
+      <img src="../../static/image/2.jpeg" />
       </md-avatar>
     </md-toolbar>
   </md-sidenav>

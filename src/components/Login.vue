@@ -5,7 +5,7 @@
     密码 <input type="password" name="password" v-model="password" />
   </div>
   <button @click="login()">登陆</button>
-
+</br>
   <img src="../image/1.jpg" />
 </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     login(){
       this.$http.post(
     'http://localhost:8010/receive',
-    // 请求体重发送数据给服务端
+    // 请求账号密码发送数据给服务端
     {
         username: this.username,
         password: this.password,
